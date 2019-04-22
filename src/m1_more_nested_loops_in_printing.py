@@ -272,6 +272,7 @@ def numbers_constant_forward(r, maxnum, n):
     # -------------------------------------------------------------------------
 
 
+
 def run_test_numbers_constant_backwards():
     """ Tests the    numbers_constant_backwards    function. """
     print()
