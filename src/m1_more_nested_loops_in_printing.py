@@ -312,7 +312,7 @@ def numbers_constant_backwards(r, maxnum, n):
     Preconditions:  r, maxnum and n are positive integers.
     """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -321,6 +321,13 @@ def numbers_constant_backwards(r, maxnum, n):
     #   defeat the goal of providing practice at loops within loops.
     # -------------------------------------------------------------------------
 
+    for k in range(r):
+        for j in range(maxnum):
+            for i in range(n):
+                print(maxnum - j,end='')
+            for h in range(1):
+                print(' ',end='')
+        print()
 
 def run_test_numbers_increasing_forward():
     """ Tests the    numbers_increasing_forward    function. """
