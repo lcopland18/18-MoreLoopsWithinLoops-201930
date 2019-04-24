@@ -79,7 +79,7 @@ def largest_number(seq_seq):
     where each subsequence contains only numbers.
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
 
@@ -106,7 +106,7 @@ def largest_number(seq_seq):
 def run_test_largest_negative_number():
     """ Tests the    largest_negative_number    function. """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function.
+    # DONE: 4. Implement this TEST function.
     #   It TESTS the  largest_negative_number  function defined below.
     #
     #   Include enough tests to give you confidence that your solution
@@ -130,17 +130,15 @@ def run_test_largest_negative_number():
     print('Expected and actual are:', expected, answer)
 
     # Test 3:
-    expected = -20
-    answer = largest_negative_number((5], [-1][-20])
+    expected = -1
+    answer = largest_negative_number([[5],[-1],[-20]])
     print('Expected and actual are:', expected, answer)
 
     # DONE 2 (continued): Add your ADDITIONAL test(s) here:
 
     # Test 4
-    expected = 15
-    answer = largest_negative_number([(-20
-                             (10,),
-                             [15]])
+    expected = -10
+    answer = largest_negative_number([(-20,), (-10,),[-15]])
     print('Expected and actual are:', expected, answer)
 
 
@@ -167,7 +165,7 @@ def largest_negative_number(seq_seq):
     where each subsequence contains only numbers.
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # CHALLENGE: Try to solve this problem with no additional sequences
@@ -180,11 +178,14 @@ def largest_negative_number(seq_seq):
 
     for h in range(len(seq_seq)):
         for g in range(len(seq_seq[h])):
-            maxj = g
-            maxk = h
+            if seq_seq[h][g] < 0:
+                maxj = g
+                maxk = h
 
-    if maxj == None:
+
+    if maxj == None :
         return None
+
 
     for k in range(len(seq_seq)):
         for j in range(len(seq_seq[k])):
@@ -425,7 +426,7 @@ def first_is_elsewhere_too(seq_seq):
     and the given argument is a sequence of sequences.
     """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -441,7 +442,13 @@ def first_is_elsewhere_too(seq_seq):
     #   practice at loops within loops (within loops within ...)
     # -------------------------------------------------------------------------
 
+    for k in range(1,len(seq_seq)):
+        for j in range(len(seq_seq[k])):
+            for i in range(len(seq_seq[0])):
+                if seq_seq[0][i] == seq_seq[k][j]:
+                    return True
 
+    return False
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # -----------------------------------------------------------------------------
